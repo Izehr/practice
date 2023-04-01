@@ -1,0 +1,22 @@
+$ mkdir -p ~/Rukovishnikov
+$ cd ~/Rukovishnikov
+$ mkdir -p ~/Rukovishnikov/sla
+$ cd ~/Rukovishnikov/sla
+$ touch sla.txt
+$ touch kpi.txt
+$ touch soprovojdenie.txt
+$ echo "Соглашение об уровне(SLA) - это аутсорсинговый договор с поставщком технологий, где описывается уровень обслуживания, который поставщик обещает предоставить клиенту. В нйм указывается такие метрики безотказной работы, доставки, ответа и разрешения." > sla.txt
+$ echo "Ключевые показатели эффективности(KPI) - это числовые показатели деятельности, которые помогают изерить степень достижения целей или оптимальности процесса: результативность и эффективность" > kpi.txt
+$ echo "Сопровождение ПО - процесс улучшения, оптимизации и устранения дефектов программного обеспечения (ПО) после передачи в эксплуатацию." > soprovojdenie.txt
+$ cd ~/Rukovishnikov
+$ mkdir -p ~/Rukovishnikov/backup
+$ cd ~/Rukovishnikov/backup
+$ tar -cvf backup.tar.bz2 ~/Rukovishnikov/sla
+$ cd ~/Rukovishnikov/sla
+$ echo "Виды сопровождения:" >> soprovojdenie.txt
+$ echo "Корректирующее сопровождение;" >> soprovojdenie.txt
+$ echo "Профилактическое сопровождение;" >> soprovojdenie.txt
+$ echo "Адаптирующее сопровождение;" >> soprovojdenie.txt
+$ echo "Совершенстующее сопровождение;" >> soprovojdenie.txt
+$ cd ~/Rukovishnikov/backup
+$ tar --create --gzip --file=archive.tgz --listed-incremental=my_folder.snar ~/Rukovishnikov/sla
